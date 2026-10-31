@@ -1,0 +1,616 @@
+
+@import "tailwindcss";
+
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =========================
+   MAIN BACKGROUND
+========================= */
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    #dbeafe 0%,
+    #93c5fd 40%,
+    #60a5fa 75%,
+    #bfdbfe 100%
+  );
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: 100%;
+  min-height: 75px;
+  padding: 18px 7%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand h1 {
+  color: #172554;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   LOGIN CONTAINER
+========================= */
+
+.login-container {
+  width: 100%;
+  min-height: calc(100vh - 75px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 35px 20px;
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card {
+  width: 100%;
+  max-width: 430px;
+
+  padding: 40px;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.65);
+
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  box-shadow: 0 15px 45px rgba(30, 64, 175, 0.15);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-header h2 {
+  color: #172554;
+  font-size: clamp(22px, 4vw, 27px);
+  margin-bottom: 10px;
+}
+
+.login-header p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.login-card form label {
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+.login-card form input {
+  width: 100%;
+  min-width: 0;
+
+  padding: 13px 14px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+
+  outline: none;
+
+  font-size: 16px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  transition: 0.3s;
+}
+
+.login-card form input:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* =========================
+   PASSWORD FIELD
+========================= */
+
+.password-field {
+  width: 100%;
+  position: relative;
+}
+
+.password-field input {
+  padding-right: 48px !important;
+}
+
+.password-field button {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+
+  border: none;
+  background: transparent;
+
+  color: #64748b;
+  cursor: pointer;
+
+  padding: 5px;
+}
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-btn {
+  width: 100%;
+
+  margin-top: 25px;
+  padding: 14px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #1d4ed8;
+  color: white;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer-text {
+  color: #64748b;
+
+  text-align: center;
+
+  font-size: 12px;
+  line-height: 1.5;
+
+  margin-top: 25px;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+  width: 100%;
+  max-width: 1200px;
+
+  min-height: calc(100vh - 75px);
+
+  margin: 0 auto;
+  padding: 65px 30px;
+}
+
+.dashboard-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.dashboard-heading h2 {
+  color: #172554;
+
+  font-size: clamp(25px, 4vw, 34px);
+
+  margin-bottom: 12px;
+}
+
+.dashboard-heading p {
+  color: #334155;
+  font-size: 16px;
+}
+
+/* =========================
+   PORTAL GRID
+========================= */
+
+.portal-container {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 25px;
+}
+
+/* =========================
+   PORTAL CARDS
+========================= */
+
+.portal-card {
+  width: 100%;
+  min-width: 0;
+
+  padding: 35px 25px;
+
+  border-radius: 18px;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  box-shadow: 0 8px 30px rgba(30, 64, 175, 0.12);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portal-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: 0 15px 35px rgba(30, 64, 175, 0.2);
+}
+
+/* =========================
+   PORTAL ICON
+========================= */
+
+.portal-icon {
+  width: 75px;
+  height: 75px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* =========================
+   PORTAL TEXT
+========================= */
+
+.portal-card h3 {
+  color: #172554;
+  font-size: 21px;
+
+  margin-bottom: 12px;
+}
+
+.portal-card p {
+  color: #64748b;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  min-height: 45px;
+
+  margin-bottom: 25px;
+}
+
+/* =========================
+   PORTAL BUTTON
+========================= */
+
+.portal-btn {
+  display: block;
+  width: 100%;
+
+  padding: 13px;
+
+  border-radius: 9px;
+
+  background: #1d4ed8;
+  color: white;
+
+  text-decoration: none;
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.portal-btn:hover {
+  background: #1e40af;
+}
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
+
+.logout-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  padding: 11px 18px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #1d4ed8;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #1e40af;
+}
+
+/* =========================
+   TABLETS
+   601px - 900px
+========================= */
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+
+  .navbar {
+    padding: 18px 5%;
+  }
+
+  .dashboard {
+    padding: 50px 25px;
+  }
+
+  .portal-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .portal-card {
+    padding: 30px 20px;
+  }
+
+}
+
+/* =========================
+   MOBILE PHONES
+   600px AND BELOW
+========================= */
+
+@media screen and (max-width: 600px) {
+
+  .navbar {
+    min-height: 65px;
+    padding: 15px 18px;
+  }
+
+  .brand h1 {
+    font-size: 21px;
+    letter-spacing: 1.5px;
+  }
+
+  .login-container {
+    min-height: calc(100vh - 65px);
+    padding: 25px 16px;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+
+  .login-header {
+    margin-bottom: 22px;
+  }
+
+  .login-header h2 {
+    font-size: 22px;
+  }
+
+  .login-header p {
+    font-size: 13px;
+  }
+
+  .login-card form label {
+    font-size: 14px;
+  }
+
+  .login-card form input {
+    padding: 13px;
+    font-size: 16px;
+  }
+
+  .login-btn {
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  .footer-text {
+    font-size: 11px;
+  }
+
+  .dashboard {
+    width: 100%;
+    padding: 35px 16px;
+  }
+
+  .dashboard-heading {
+    margin-bottom: 28px;
+  }
+
+  .dashboard-heading h2 {
+    font-size: 25px;
+  }
+
+  .dashboard-heading p {
+    font-size: 14px;
+  }
+
+  .portal-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .portal-card {
+    width: 100%;
+    padding: 28px 20px;
+  }
+
+  .portal-card h3 {
+    font-size: 20px;
+  }
+
+  .portal-card p {
+    min-height: auto;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .portal-btn {
+    padding: 14px;
+  }
+
+  .logout-btn {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+}
+
+/* =========================
+   SMALL MOBILE PHONES
+   360px AND BELOW
+========================= */
+
+@media screen and (max-width: 360px) {
+
+  .navbar {
+    padding: 14px 12px;
+  }
+
+  .brand h1 {
+    font-size: 18px;
+  }
+
+  .login-container {
+    padding: 20px 12px;
+  }
+
+  .login-card {
+    padding: 24px 16px;
+  }
+
+  .login-header h2 {
+    font-size: 20px;
+  }
+
+  .dashboard {
+    padding: 30px 12px;
+  }
+
+  .dashboard-heading h2 {
+    font-size: 22px;
+  }
+
+  .portal-card {
+    padding: 24px 15px;
+  }
+
+}
+
+/* =========================
+   TOUCHSCREEN DEVICES
+========================= */
+
+@media (hover: none) {
+
+  .portal-card:hover,
+  .login-btn:hover,
+  .portal-btn:hover {
+    transform: none;
+  }
+
+}
